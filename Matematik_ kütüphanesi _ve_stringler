@@ -1,0 +1,121 @@
+#Matematik kütüphanesi ve stringler
+alininYasi=25
+print(alininYasi+5)
+#Ornek1
+# Bir oyunda oyuncunun elde ettiği puan=altın sayısı *3 yiyecek miktarı*2 can sayısı*1000 toplamıdır.
+# 300 altın 200 yiecek 3 cani olan oyuncunun puanı ?
+altinSayisi=300
+yiyecekMiktari=200
+can_sayisi=3
+puan=(altinSayisi*3)+(yiyecekMiktari*2)+(can_sayisi*1000)
+print(puan)
+
+cikolata=0.9
+odenecek_miktar=3*cikolata
+print(odenecek_miktar)
+#import math kütüphanesi fonksiyonlari
+import math 
+print(math.ceil(odenecek_miktar))
+print(math.floor(odenecek_miktar))
+#KAALAN BULMA  math.fmod(bölünen,bölen)
+print(math.fmod(30,5))
+print(math.fmod(48,8))
+print(math.fmod(10,3))
+print(math.fmod(30,4))
+print(math.fmod(30,7))
+#Üs alma math.pow(sayi,üssü)
+print(math.pow(2,3))
+print(math.pow(5,2))
+print(math.pow(10,2))
+#Karekök alma math.sqrt(sayı)
+print(math.sqrt(25))
+print(math.sqrt(100))
+
+#Matematik fonksiyonlarında 2 tane sabit vardır. Pi ve E sayiları
+print(math.pi)
+print(math.e)
+print(math.sin)
+print(math.log)
+
+#STRİNGLER
+ilk='Merhaba'
+ikinci="Merhaba"
+ucuncu='''Merhaba'''
+print(ilk)
+print(ikinci)
+print(ucuncu)
+#' ' " " ''' ''' stringtir.
+a="Tebesir"
+b="5"
+c="Hareketi"
+print(a+c+b)
+print(a*6)
+print(b*9)
+
+
+
+soyad="aydoğan"
+print(len(soyad))
+print(soyad[0])
+print(soyad[3])
+print(soyad[4])
+print(soyad[6])
+print(soyad[-1])
+print(soyad[-7])
+print(soyad[1:])    #1.inisten sona kadar
+print(soyad[1:3])    #1.indisten 3. indise kadar. 3. indis dahil değil.
+print(soyad[1:6:2]) #1.indis dahik 6.indise kadar 6 dahil değil ve :2 birini al birini alma al alma al alaam vs vs vs...
+print(soyad[2:6:3])
+print(soyad[0:6:4]) # say :2 :3 :4 say.
+print(soyad[-3:-1]) #-3 dahil -1 dahil değil.
+print(soyad[-1:])      #soyadınızın son harfini bulmaktır.
+print(soyad[:-1])   #son harf hariç tümsoyad yazar.
+print(soyad.count("n")) #soyadında kaç tane n harfi var sayar count.
+print(soyad.count("a"))
+soyad="AyAn"
+print(soyad.upper())        #soyadının hepsini büyük harfle yazar.
+print(soyad.lower())        #soyadının hepsini küçük harfle yazar.
+print(soyad.startswith("a"))    #f büyük küçük harf uyumlu.
+print(soyad.startswith("A"))    #t
+print(soyad.startswith("Prof."))
+
+#string içinde string bulma.
+print(soyad.index("y"))
+print(soyad.find("y"))
+#print(soyad.index("r"))
+print(soyad.find("r"))
+#
+#soyad.index("a")ve soyad.find("a") 0 olur. ayan soyadında. çünkü a ilk kez 0.indexte yer alıyor.  ama r harfi indexte hata verir.  find ise -1 döndürür.
+#index sadece harfin olup olamma durumarında çaıliır. find ise istenen ifade ve değerin olmaması durumunda -1 değerini döndürür.
+#find>index functions.
+#replace parametreli fonksiyon. g ve k birer parametredir.
+
+sehir="angara"
+print(sehir.replace("g","k"))
+print(sehir.replace("anga","anka"))
+
+#isdigit() hepsi rakamdan mı oluşmuş  T F Değer döndürür.
+#isalnum() harf ve sayı karışık mı
+#isalpha() hepsi harften mi oluşmuş
+
+string1=("kelime")
+string2=("2017")
+string3=("kelime2017")
+
+print(string1.isdigit())
+print(string1.isalpha())
+print(string1.isalnum())
+
+print(string2.isdigit())
+print(string2.isalpha())
+print(string2.isalnum())
+
+print(string3.isdigit())
+print(string3.isalpha())
+print(string3.isalnum())
+
+#Ters Taksim (\) kaçış karakteri ' ' *  "  "  *  '''   ''' "  (\')
+cumle="bugun Ankara'ya geldim"
+print(cumle)
+cumle2='Bugün Ankara\'ya geldim'
+print(cumle2)
