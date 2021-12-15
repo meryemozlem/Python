@@ -1,0 +1,67 @@
+print("Hello World")
+print('''Elbet bir gün buluşacaktık''')
+print(10+7)
+
+ilk_sayi=3
+type(ilk_sayi)
+ikinci_sayi=5
+print(ilk_sayi+ikinci_sayi)
+print(ilk_sayi*ikinci_sayi)
+
+ilk_kelime=("Merhaba")
+ikinci_kelime=("Kardeşim")
+ucuncu_kelime=("3")
+dorduncu_kelime=4
+print(ilk_kelime+ikinci_kelime+ucuncu_kelime)
+print(ilk_kelime*dorduncu_kelime)
+print(ilk_kelime+"  "+ikinci_kelime)
+
+alisverisListem=["elma","peçete","sıvı sabun","deterjan","muz","çikolata","kayısı",3,'et']
+print(alisverisListem)
+
+rakamlar=(0,1,2,3,4,5,6,7,8,9)
+
+rakamlar[0]
+rakamlar[8]
+print(rakamlar[8])
+#rakamlar[100] demet(tuple) liste araloğı dışında. 100.index yok.
+
+sozluk={"İzmir":35,"Erzurum":25,"Ankara":6,"Kırıkkale":71,"Adana":1,"Düzce":81,"İstanbul":34,"Yozgat":66}
+print(sozluk["İzmir"])
+print(sozluk["İstanbul"])
+print(sozluk["Ankara"])
+
+kume=()
+kume=set(["elma","armut","ayva","tarçın","kakule"])
+print(kume)
+kume.add("kiraz")
+print(kume)
+#kume.add("elma")
+#print(kume) Küme olduğu için bir daha aynı eleman olan elmayı kabul etmedi.
+kume.add("erik")
+print(kume)
+
+#ODEVLER
+#1  öğrenci no tam sayı kilo ondalıklı sayı şeklinde tanımla. Sonra bunları topla ve ekrana yazdır.
+#Lütfen kilo değerini noktalı bir halde giriniz. Virgül , kullanırsanız program tuple sanıyor.
+ogrenciNo=1170
+kilo=65.6
+toplam=(ogrenciNo+kilo)   #toplam=(ogrenciNo)+(kilo)
+kilo=int(float())
+print(toplam)
+
+#2 okul ismini strin bir değişken olarak tanımla.
+okulAdi="Kırıkkale Üniversitesi"
+print(okulAdi)
+
+#3 içinde 1 öğretmen adı, okul numaran ve okulun kuruluş yılının olduğu bir liste yani dizi tanimla.
+
+benimListemm=["Cansu Taşkın",1170,1992]
+print(benimListemm)
+
+#4
+yasadıgımYerler=("Yozgat:66","Ankara:06","Sivas:58","çorum:19","Çankırı:18","Trabzon:61","Tunceli:62")
+#yasadıgımYerler[1]
+print(yasadıgımYerler[0])
+print(yasadıgımYerler[1])
+print(yasadıgımYerler[4])
