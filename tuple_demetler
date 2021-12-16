@@ -1,0 +1,74 @@
+#DEMETLER (TUPLE)  (   )
+#Eleeman eklemek,güncellemek,silmekve çıkartmak yoktur. Listeler gibi farklı elemanlardan oluşr.
+
+demetim=()
+print(demetim)
+
+turkDevletleriBaskentleri=("Ankara","Astana","Aşkabat","Bakü","Bişkek","Lefkoşa","Taşkent")
+print(turkDevletleriBaskentleri)
+#*****
+sevdiklerim3=("mor",5,"Ankara")
+print(sevdiklerim3)
+print(type(sevdiklerim3))
+
+#demet2=(["bugra","ayan","ankara",3,5]) yazarsan ve print(type(demet2)) dersen type list çıkar.
+demet2=(["bugra","ayan","ankara"],3,"elma",5)
+print(demet2)
+print(type(demet2))
+
+
+#str algılar. Tek bir elemanı olan demet yapılsın.
+demet3=("bugraa")
+print(demet3)
+print(type(demet3))
+
+#Tuple gelir. Nasıl oldu? "bugraa," , sayesinde oldu.
+demet4=("bugraa",)
+print(demet4)
+print(type(demet4))
+
+demet5=("karanfil","gül","orkide","nergiz","papatya","nilüfer","sardunya","lale","lavanta","gül")
+print(demet5[1])
+print(demet5[8])
+print(demet5[5])
+
+''' ev='ANKARA'
+ev.lower()
+print(ev.lower()) '''
+
+# Bir deemt içinde ikişer elemanı ola iki dizi vardır. bu listelerden eleman çağırırken 2 indis parametre kullanırız. [0] [0] ilk dizinin ilk elemanı demektir.
+demet6=(["gül","karanfil"],["ankara","istanbul"])
+print(demet6[0] [0])
+print(demet6[0] [1])
+print(demet6[1] [0])
+print(demet6[1] [1])
+
+demet7=("karanfil","gül","orkide","nergiz","papatya","nilüfer","sardunya","lale","lavanta","gül")
+print(demet7.count("gül"))
+print(demet7.count("lavanta"))
+#Demette kaç değişken olduğunu gördük.
+print(len(demet7))
+#Demette açelya ve lale var mı ?  in. Büyük küçük harfe duyarlıdır.
+print("Açelya" in demet7)
+print("Lale" in demet7)
+print("lale" in demet7)
+
+#DENEGÖR
+#Liste ve Demet güncelleme. Demette böyle bir şey asla yapamazsın. 
+
+listem=["ali","köroğlu","90"]
+listem[2]="83"
+print(listem)
+
+'''demetim=("buse","demir","17")
+demetim[1]="altay"
+print(demetim)'''
+
+#Bir listem var ama yedekte de bir demetim olmasını istiyorum. Listwyi hzlıca demete çevirmenin yolu ? 
+#demet_ismi=tuple(donusturmek_istenen_liste)
+#demet1=tuple(liste2)   liste -------->  demet
+#liste20=["ali","ayan","ankara"]
+#print(type(liste20)
+#demet25=()
+#demet25=tuple(liste20)
+#print(type(demet25))
