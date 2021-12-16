@@ -1,0 +1,52 @@
+'''
+LİSTE DİZİ [ ] List
+DEMET      ( ) tUPLE
+SÖZLÜK     { } Dictinoary
+
+'''
+#Sözlükler dictionary dict {  } Veri Tipi
+#   clever:zeki   hopefully:umutlu     nice:hoş    pencil:kalem
+#   key   :value  key      :value      key :value  key   :value
+#   anahtar:değer
+notlar={}
+print(notlar)
+print(type(notlar))
+
+sinifNotlari={"Buğra":100, "Meryem":100,"Orhan":55,"Sude":82,"Sevde":87,"Eda":93}
+print(sinifNotlari)
+print(type(sinifNotlari))
+
+#Selimin notunu girmeyi unuttuk. Ekleme yapalım. sözlük_ismi[anahtar]=değer
+sinifNotlari["Selim"]=10
+print(sinifNotlari)
+#Sözlükte güncelle. sözlük_ismi[anahtar]=yeni_değer
+sinifNotlari["Sevde"]=92
+print(sinifNotlari)
+#Sözlükten bir eleman sil.Orhan ve Necati kopya çekmiş. Orhan=0 Necati=55
+del sinifNotlari["Orhan"]
+sinifNotlari["Necati"]=55
+print(sinifNotlari)
+#İstersek sözlüğü silebiliriz. sözlük_adi.clear() metod.
+sinifNotlari.clear()
+print(sinifNotlari)
+#Pop metodu ile istenen eleman silinir.
+sinifNotlari={"Buğra": 100, "Meryem": 100, "Sude": 82, "Sevde": 92, "Eda": 93, "Selim": 10, "Necati": 55}
+sinifNotlari.pop("Eda")
+print(sinifNotlari)
+#popitem metodu içine parametre almıyor ve sözlükten rastgele bir eleman siliyor.
+sinifNotlari.popitem()
+print(sinifNotlari)
+#Sözlüğü nasıl kopyalarız? copy metounu kullan. yeniNotlar=sinifNotlari
+yeniNotlar=sinifNotlari
+print(yeniNotlar)
+#Öğrencileri ve notlarının ayrı ayrı ekrana bastır. Anhtarlar:keys Değerler:values
+print("Anahtarları yazdıralım. Öğenci adı")
+print(sinifNotlari.keys())
+print("Değerleri yazdıralım. Aldıkları notlar")
+print(sinifNotlari.values())
+#Anahtarları ve değerleriyanyana yazdıralım.
+print(sinifNotlari.items())
+#in içinde. Big küçük harf duyarlıdır.
+print("Arzu" in sinifNotlari)
+print("Buğra" in sinifNotlari)
+print("sude" in sinifNotlari)
