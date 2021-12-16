@@ -1,0 +1,81 @@
+#LİSTELER=DİZİLER
+#index yapılır. Listeye eleman ekle çıkart ve sırala... [   ]
+
+ismimiz="bugra"
+print(ismimiz[0])
+print(ismimiz[3])
+#print(ismimiz[5]) hata verir type error. HATIRLATMA ALARMI
+
+bosListem=[]
+print(bosListem)
+
+sevdiklerim=["İstanbul","muz",100]
+#string ,strirng,integer değerli bir liset dizi.Yani listen içinde fraklı türdeki değişkenleri kullnabiliriz. 2.indexten son indexe kadar son index dahil değil.
+print(sevdiklerim[:2])
+print(sevdiklerim[1:3])
+print(sevdiklerim[2:])
+#Listeye yeni eleman ekle ve liste elemanın saysın program. append ve len.
+sevdiklerim.append("GTA Vice City")
+print(len(sevdiklerim))
+print(sevdiklerim)
+
+alisverisListem=["muz","süt","çikolata","peçete","maske","mandalina","bisküvi",5,"5"]
+print(alisverisListem)
+print(alisverisListem[0])
+print(alisverisListem[2])
+print(alisverisListem[5])
+print(alisverisListem[7])
+print(alisverisListem[8])
+
+#İki listeyi toplayalım yani birleştirelim.
+
+sehirler=["ANKARA","BOLU","ÇANAKKALE","DENİZLİ","ELAZIĞ"]
+sayilar=[4,6,16]
+sevdiklerim2= sehirler+sayilar
+print(sevdiklerim2)
+# Bir listeyi iki katına çıkartmak. *2 nasıl olur? sayilar=[4,6,16] *2 sayilar=[4,6,16,4,6,16]
+sayilar=[4,6,16]
+carp=sayilar*2
+print(carp)
+
+#listeden eleeman silmek. ???
+sevdiklerim=["İstanbul","muz",100,"GTA Vice City"]
+print(sevdiklerim)
+sevdiklerim.pop(1)
+print(sevdiklerim)
+
+arkadaslarim=["Ayşe","Mehmet","Betül"]
+arkadaslarim[0]="Saliha"
+print(arkadaslarim)
+
+#Liste kopyalama. meryem ve thomas aynı şehirleri seviyor. thomas_sehirler=meryem_sehirler
+meryem_sehirler=["Balıkesir","Chicago","Detroit","Frankfurt"]
+thomas_sehirler=meryem_sehirler
+print(thomas_sehirler)
+
+#Yeni bir liste oluşturduk.İstediğim kelime yeni liste içinde mi bul.
+sarki="Mahalleli kahvede muhabbet peşindeyken Leylekler lak lak edip peynir gemisi yüklerken Kul Ahmet erken yatar sabaha ya kısmet derdi Kimseler anlamazdı ya kısmet ne demekti"
+kelimeler=sarki.split(" ")
+print(kelimeler)
+
+print("peynir" in kelimeler)
+print("zeytin" in kelimeler)
+
+#Diziye listeye ters takla attır. ???
+numbers=[9,7,8,1,15]
+numbers.reverse()
+print(numbers)
+print(max(numbers))
+print(min(numbers))
+numbers.sort()
+print(numbers)
+
+#ÇOOOK ÖNEMLİ DİKKAT ET !!! Liste içi liste yaptık.
+#Liste içi liste tanımlarken veya listeleri birleştirirken "" kullanılmaz. Eğer kullanılırsa python bunun bir string olduğunu düşünür. "" kullanma.
+
+meyvelerim=["Elma","Mandalina","Tarbzon Hurması","Muz","Armut"]
+sebzelerim=["Brokoli","Kabak","Lahana","Patlıcan","Fasulye"]
+iceceklerim=["Ayran","Kola","Kahve","Şerbet","Çay"]
+#total_alisveris_listemiz=meyvelerim+sebzelerim+iceceklerim. [] Tek bir liste halinde yazıyor. Altta ise dizileri birleştiriyor. []+[]+[]
+total_alisveris_listemiz=[meyvelerim,sebzelerim,iceceklerim]
+print(total_alisveris_listemiz)
