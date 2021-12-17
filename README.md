@@ -1,2 +1,2 @@
 # Python
-Python videolarında ve kitaplarında gördüğüm örneklerdir.
+Python videolarında ve kitaplarında gördüğüm tüm örneklerdir.
