@@ -1,0 +1,41 @@
+#Operatörler
+#   ARİTMETİK OPERATÖTLER arit(matematik)metik                 (A=4 B=3)
+#   + TOPLAMA OPERATÖRÜ                 A+B=7
+#   - ÇIKARMA ''                        A-B=1
+#   * ÇARPMA ''                         A*B=12
+#   / BÖLME ''                          A/B=1.333
+#   % KALAM BULMA MOD ''                A%B=1
+#   ** ÜS ALMA ''                       A**B=64 
+#   // KALANSIZ BÖLME ''                A%B=1   
+#
+#   KARŞILAŞTIRMA OPERATÖRLERİ                                 (A=10 B=5)
+#   ==      iki değer eşitse T değer döner
+#   =!      iki değer eşitdeğise T değer döner
+#   <>      iki değer eşitdeğise T değer döner
+#   <       ilk değer büyükse T değer döner
+#   >       ilk değer küçükse T değer döner
+#   <=      ilk değer büyükse veya eşitse T değer döner
+#   >=      ilk değer küçükse veya eşitse T değer döner
+#
+#   ATAMA OPERATÖRLERİ                                         (A=5 B=4)           A+B=A    ==    A+=B                  a*=b   ==   a*b=a  
+#   =       solu sğaa atar
+#   +=      sağdaki değeri soldaki değerlerle toplar ve soldaki değere yazar. atar.
+#   -=      sağ-sol=sol
+#   *=      sağ*sol=sol
+#   /=      sağ/sol=sol
+#   %=      sağ%sol=sol
+#   **=     sağ**sol=sol
+#   //=     sağ//sol=sol
+#
+#   MANTIKSAL OPERATÖRLER
+#   and     ve          iki durum da doğru ise T döner
+#   or      veya        iki durumdan herhangi biri doğru ise T döner
+#   not     değil
+#
+#   ÜYELİK OPERATÖRÜ
+#   in      içinde mi
+#   not in  içinde değil mi
+#
+#   KİMLİK OPERATÖRLERİ             
+#   is      eşit mi
+#   is not  eşit değil mi
