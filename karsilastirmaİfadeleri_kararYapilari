@@ -1,0 +1,42 @@
+#KOŞULLU DURUMLAR (KARAR YAPILARI) (İF ELSE/ SWİTCH CASE)
+#İf elif else (eğer böyleyse böyle yap. böyleyse de böyle yap.)
+'''Örnek 1'''
+yas=18
+
+if yas>13:
+    print("sosyal ağlara giriş yapabilirsin.")
+
+'''Örnek 2'''
+yas=int(input("Lütfen yaşını gir ve ben senin için sosyal ağlara giriş yapıp yapamayacağına bakayım : "))
+
+if yas>=18 : 
+    print("Tebrikler! İstediğin sosyal uygulamaya girebilirsin.")
+
+else:
+    print("Üzgünüm dostum bu ortamlar sana göre değil.")
+
+'''Örnek 3               ŞGS   Şifre Giriş Sistemi'''
+
+print("Gmail'e hoşgeldiniz.")
+kullaniciAdi=input("Lütfen kullanıcı adını gir. : ")
+sifre=int(input("Lütfen şifreni gir. : "))
+
+if kullaniciAdi=="meryemozlemaydogan" and sifre==1234567891011:
+    print("Hesaba giriş başarılı.")
+
+else:
+    print("Sen de kimsin? Ben seni tanımıyorum dostum. ??? ")
+
+'''Örnek 4                  Elma dersem çık Armut dersem çıkma.'''
+print("Haydiii,bir oyun oynayalımmm.")
+meyve=input("Bana bir meyve ismi söyler misin? ")
+if meyve== "elma" :
+    print("Elma dersem çık")
+elif meyve== "armut":
+    print("Armut dersem çıkma")
+elif meyve== "portakal":
+    print("Portakal nereden çıktı? ")
+elif meyve== "Şeftali":
+    print("Şeftaliyi de çoook severimmm.")
+else:
+    print("Nee bu hangi meyve. Maalesef ben ne demeliyim bilmiyorum,kafam karıştı. ")
