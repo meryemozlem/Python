@@ -2,15 +2,18 @@
 #Matematik ile ilgili program yazarken matematik modülünü,grafiklerle ilgili çaışırken grafik modülünü koda ekle. Bu sayede tek satır kodla programa yetenek kazandır.
 # .py python dosyası olduğunu gödterir.
 
-def topla(sayi1,sayi2):
+
+PythonAppliczation2.py 'de olanlar:
+sayi1=4
+sayi2=5
+
+def topla():
     print("Toplam: ", sayi1+sayi2)
-    
-    
-    
-    
-    
-    
-    
-    import matematik
+topla()
+
+
+mayematik.py de olanlar:
+
+import matematik
 
 matematik.topla(4,5)
