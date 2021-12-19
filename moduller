@@ -17,3 +17,58 @@ mayematik.py de olanlar:
 import matematik
 
 matematik.topla(4,5)
+
+
+
+# import kur .Random modülü. randint fonksiyonu...
+#print(random.random()) 0 1 arasında değer yazar. random modülü random fonksiyonu. Randint Random Integer. Random modülü python içinde kurulu olan bir modüldür.
+'''
+import random
+
+print("Aklımdan tuttuğum sayı:" ,
+      random.randint(0,100))
+
+
+import matplotlib.pyplot as cizim
+
+cizim.plot([0,1,2,3,4,5] , [0,5,10,8,12,14])
+cizim.show()
+
+import turtle
+
+bilgin=turtle.Turtle()
+#turtle modül Kaplumbağa kütüphanesi. Turtle fonksiyon. bilgin isimli kaplumbağa.
+for i in range(4):
+    bilgin.forward(50)
+    bilgin.right(90)
+
+
+
+import turtle
+
+ekran=turtle.Screen
+ekran.setup(400,400)
+ekran.bgpic("space.png")
+
+ekran.addshape("rocketship.png")
+turtle.shape("rocketship.png")
+
+hareket_et=10
+
+def ileri():
+  turtle.forward(hareket_et)
+
+def sol():
+  turtle.left(hareket_et)
+
+def geri():
+  turtle.backward(hareket_et)
+
+def sag():
+  turtle.right(hareket_et)
+
+ekran.onkey(ileri,"Up")
+ekran.onkey(geri,"Down")
+ekran.onkey(sol,"Left")
+ekran.onkey(sag,"Right")
+ekran.listen()
