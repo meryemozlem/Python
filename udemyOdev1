@@ -1,0 +1,63 @@
+Her veri tipiyle bir değişken oluşturunuz.
+
+x = None
+
+metin = "Ödev örneği"
+
+sayiInteger = 45
+
+sayiFloat = 3.14
+
+sayiComplex = 3+2j
+
+b = True
+
+liste = [2,5,142,-3,[24,21],"Örnek",0]
+
+demet = (2,5,142,-3,[24,21],"Örnek",0)
+
+kume = {2,5,142,-3,(24,21),"Örnek",0}
+
+sozluk = {"bir":"one","iki":"two","üç":"three"}
+
+İki farklı değişken ile string oluşturup bu değişkenleri .format metoduyla ve f Sting metoduyla birleştiriniz.
+
+a = "Python"
+
+b = "öğreniyorum"
+
+cevap = "Merhaba, ben {} {}".format(a,b)
+
+Bir liste oluşturup tüm liste metodlarını çalıştırınız.
+
+liste = [3,14,21,3,-3]
+
+
+
+liste.append(2)
+
+#liste.clear()
+
+liste2 = liste.copy()
+
+liste.count(3)
+
+liste.extend([1,23,1])
+
+liste.index(1)
+
+liste.insert(0,5)
+
+liste.pop()
+
+liste.remove(1)
+
+liste.reverse()
+
+liste.sort()
+
+Bir liste oluşturup listenin elemanlarını aralarında - işareti olacak şekilde stringe çeviriniz.
+
+liste = ["Ben","Python'ı","çok","iyi","öğreniyorum"]
+
+metin = "-".join(liste)
