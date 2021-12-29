@@ -435,3 +435,11 @@ while i<6:
     if i==3:
         continue                    #sonsuz döngü i=3...
     i+=1
+
+#bunun sonsuz olmasını kaldırmka için.
+i=1
+while i<6:
+    print("i değeri:   ", i)
+    i+=1
+    if i==3:
+        continue
