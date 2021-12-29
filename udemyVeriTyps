@@ -286,3 +286,152 @@ print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 birlesimF= f"{metin1} ve {metin2} "
 
 print(birlesimF)
+
+
+
+
+
+#Matematiksel Fonksiyonlar
+
+a=-9                    #Mutlak değer alır.
+print(abs(a))
+
+b=3.2                   #En yakın değere yuvarlar.
+print(round(b))
+
+c=3.49
+print(round(c))
+
+d=4.6
+print(round(d))
+
+liste=[8,7,3,1,2,5]
+print(max(liste))
+print(min(liste))
+print(sum(liste))       #Listeyi toplar.
+
+for i in range(2,8,2):    #2den 8e kadar. 8 dahil değil.            :2Atlamalı
+    print(i)
+
+#Koşullar
+ayse=9
+veli=9
+if (ayse==veli):
+    print("Tebrikler,canım")
+
+a=17
+b=988
+if a<b:
+    print("a değeri b değerinden küçüktür.")
+elif a==b:
+    print("a değeri b değerine eşittir.")
+else:
+    print("a değeri b değerinden büyüktür.")
+
+c=6
+d=8
+if c<d:
+    c+=10
+    print(c)
+elif c>d:
+    d-=2
+    print(d)
+else:
+    c*=3
+    print(c)
+
+k=10
+z=4
+print("Çalışıyor.") if k>z else print("Çalışmıyot.")
+
+#örnek uyg.
+
+ilkSayi= input("İlk sayıyı girniz:  ")
+ikinciSayi= input("İkinci sayıyı giriniz:   ")
+
+if (ilkSayi<ikinciSayi):
+    print("Girdiğin ilk sayı, ikinci sayıdan küçük.")
+elif (ilkSayi>ikinciSayi):
+    print("Girdiğin ilk sayi, ikinci sayıdan büyüktür.")
+elif (ilkSayi==ikinciSayi):
+    print("Girdiğin değerler eşit.")
+
+#Döngüler i j k bir değişkendir.
+# i in list T o zaman print.
+list=[8,5,4,3,19,99]
+for i in list:
+    print(i)
+
+list7=[1,2,3,4,5,6,7,8,9]
+for j in list7:
+    print(j)
+
+#stringlerde indexleme olduğu için.
+metin="PYTHON"
+for k in metin:
+    print(k)
+
+metin2="23"
+for m in metin2:
+    print(m)
+#tek sayıda çalışmaz.
+demet=(2,32,9)
+for l in demet:
+    print(l)
+
+
+#for i,j in liste:
+liste9=[1,7,9,3,6,4,"İstanbul",-10]
+#liste içindekileri tek tek alıyor. if e eşitliğine bakıyor. eşit değilse print ile yazdırıyor alta. eşitse döngü duruyor.
+for i in liste9:
+    if i ==3:                       #if T
+        break
+    print(i)
+
+#continue eşitlenen değeri atlıyor ve devam ediyor.
+for i in liste9:
+    if i ==3: 
+        continue
+    print(i)
+
+#Geç ve yazdır. görmezden gelir.
+for i in liste9:
+    if i ==3:
+        pass
+    print(i)
+else:
+    print("Bitti")
+
+for j in range(1,5):
+    print(j)
+
+for i in range(1,9):
+    print("python")
+
+#WHİLE DÖNGÜSÜ
+
+a=4
+if a<8:
+    print("a değeri 8den küçük.")
+while a<8:      #sonsuz döngü
+    print("a değeri 8den küçük..")
+    a+=1        #sınırlandırdık 4 kere yazar.
+
+i=1
+while i<6:
+    print("i değeri:    ", i)       #sonsuz döngü.
+    i+=1                            #sınır
+
+i=1
+while i<6:
+    print("i değeri:   ", i)
+    if i==3:
+        break
+    i+=1
+
+i=1
+while i<6:
+    print("i değeri:   ", i)
+    if i==3:
+        continue                    #sonsuz döngü i=3...
+    i+=1
