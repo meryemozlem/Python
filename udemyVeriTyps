@@ -1,0 +1,288 @@
+a= "Python"
+b= "ögreniyorum"
+sayi = 3
+print(a+b)
+print(a+" "+b)
+print(a," ",b)
+print(a*3)
+print(sayi*4)
+
+c=1
+d=2
+print(c)
+print(d)
+print("_____")
+c,d=d,c
+print("_____")
+print(c)
+print(d)
+
+
+m=9
+print(m)
+del m
+#print(m)#Hata döndürür.
+
+globalDegisken=5
+def local():
+    global yerelDegisken
+    yerelDegisken=3
+    print(yerelDegisken)
+    print(globalDegisken)
+local()
+print(globalDegisken)
+print(yerelDegisken)
+
+degisken="bilgisayarım"
+print(degisken)
+print(type(degisken))
+print(dir(degisken))
+print(help(str))
+print(len(degisken))
+
+girdigimSayi=int(input("Sayı giriniz:        "))
+print("Senin girdiğin sayı = ", girdigimSayi)
+print(girdigimSayi*7)
+
+a="mehmet'in telefonu bende kalmış."
+b='mehmet\'in telefonu bende kalmış.'
+print(a)
+print(b)
+
+print("Python\n   öğreniyorum")
+print("Python\t   öğreniyorum")
+print("Python\t\t\t   öğreniyorum")
+
+a= "Bilgisayar"
+print(len(a))
+print(a[0])
+#error print(a[10])
+print(a[5])
+print(a[-1])
+
+print(a[1:3])       #1den başla 3e kadar. 3 dahil değil.
+print(a[:4])
+print(a[2:6:2])     #2:6:2 2den başla 6ya kadar 2,2 atlayarak gir. 2,2 nedir birini al,ardaşığınıalma.
+print(a[::2])       #baştan başla sona kadar 2 2 atla. birini al diğerini alma.
+print(a[::-1])      #tersten yazar.
+
+a="istanbul"
+b="ankara"
+
+oku="{} ve {}".format (a,b)
+print(oku)
+
+oku2=f"{a} ve {b}"
+print(oku2)
+
+print(*"python",sep=" ")
+print(*"python",sep="-")
+print(*"python",sep="~~")
+print(*"python",sep="\n")
+#* tek tek her karakteri alıyor ve sep ne ise ekliyor.
+print(*"python",sep="\t")
+
+#METOTLAR
+a="istanbul"
+print(a.capitalize())       #ilk harfi büyük yazar.
+print(a.count("a"))     #içinde kaç tane a old. sayar.
+print(a.center(0))      #?
+print(a.endswith("bul"))        #sonu bul ile mi biter? T/F.
+print(a.find("m"))      #m nin indexini söyler.
+print(a.format())       #yukarda gördüğümüz format.
+print(a.isalpha())      #hepsi harften mi oluşuyor?
+print(a.upper())        #tüm harfleri büyütür.
+
+#a=print(a.()) kayıt edilir.
+i=int()
+sayi=22
+print(type(i))
+
+i=5
+print(i.real)
+print(i.imag)
+
+f=float()
+f=3.2
+#f=2.0
+print(type(f))
+print(help(f))
+print(f.is_integer())
+
+#T F boolean
+b=bool()
+b=True
+b=False
+print(type(b))
+
+#LİSTELER diziler
+liste=()
+list3=[1,7,3,5,"elma",[3,5,7]]
+print(type(list3))
+#print(list3[0])
+list3[0]=-1
+print(list3[0])
+print(list3)
+print(list3[::2])
+print(list3[::-1])
+print(list3[::3])
+
+list3=[1,7,3,5,"elma",[3,5,7]]
+list3.append(9)
+print(list3)
+
+#list3.count(3)
+print(list3.count(3))
+
+print(list3.extend([2,1,3,8,7])
+
+#list3.clear()
+#print(list3.clear())
+
+
+
+
+#veri tipleri devamı
+list3=[2,3,5,1,8,-2,0,91]
+
+list3.append(9)
+print(list3)
+
+print(list3.count(3))
+
+list3.extend([2,1,3,1])     #eklenen bu syaılar bir dizi olark değil ayrı ayrı 'eleman' olarak eklenir.listenin arkasına sırasıyla eklenir. sona ekler.
+print(list3)
+
+list3.append([2,1,3,1])     #bunda ise tek 1 eleman olarak [ ] içinde eklenir. 'liste' olarak ekler. sona ekler.
+print(list3)
+
+list3.insert(0,43)      #istenilen index yerine atanır sayı.
+print(list3)
+
+print(list3.index(91))      #index öğren.
+list3.pop()                 #sondan attığı değeri gösterir ve onu siler.
+print(list3)
+
+list3.remove(43)            #istene değer silinir.
+print(list3)
+
+list3.reverse()             #list ters çevirilir.
+print(list3)
+
+list3.sort()                #k<b sıralar ve onu kaydeder. geri alma yok.
+print(list3)
+#fonksiyonlar
+liste=[2,3,5,1,6,2,4]       #k<b sıraladı sorttan tek farkı kaydetmez.sadece gösterir.
+print(sorted(liste))
+print(liste)
+
+print(min(liste))
+print(max(liste))
+print(3 in liste)
+print(9 in liste)
+
+#DEMETLER tuple 
+#list[]  demet() kume() dict{}
+demet=tuple()
+print(type(demet))
+
+demet2=(2,3,5,1,"elma","armut","muz")
+print(demet2)
+
+print(demet2[0])
+print(demet2[-1])
+
+print(demet2.count(5))
+print(demet2.index("elma"))
+
+#Kümeler     index yok.her eleman yalnız 1 kere bulunur. eleman eklenir.
+kume=set()
+kume={3,5,7,1}
+print(type(kume))
+
+kume1={3,4,5,1}
+kume2={1,9,2,3}
+kume1.add(0)                            #list gibi elemanı sona eklemez.istediği yere koyar.
+print(kume1)
+print(kume1.difference(kume2))
+#difference_update          farkı gösterir ve kume1e eşitler.
+kume1.discard(0)
+print(kume1)
+print(kume1.intersection(kume2))        #kesişimleri
+print(kume1.union(kume2))               #ikisini birleştirdi.
+
+#SOZLUK DİCTIONARY          key int veya string olmalı.list demet küme olamaz./// value herhangi bir veri tipi olabilir.
+#index yok.onun yerine key kullanılır. eleman eklenebilir çıkarılır.
+
+sozluk={}
+sozluk=dict()
+print(type(sozluk))
+#3 elemanlı bir sözlük.
+sozluk2={"bir":"one","iki":"two","üç":"three"}
+print(sozluk2["bir"])           #değeri yazar.
+print(sozluk2)
+
+print(sozluk2.items())
+print(sozluk2.keys())
+print(sozluk2.values())
+
+sozluk2.pop("iki")
+print(sozluk2)
+
+#veri tipleri arası dönüşüm
+
+a="232"         #str den soluk hariç her veri tipine döner.(int float complex bool list tuple set str)
+a=int (a)
+print(type(a))
+
+
+a=str (a)
+print(type(a))
+
+#intdan str,float,c,b
+a=24
+a=str(a)
+print(type(a))
+a=int(a)
+
+#bu çevirmeleri ezberleme sadece düşün.
+#Özel Durumlar
+#str--->list            aradaki boşlukları görmezden geldi onları ayrı bie eleman alıp listeye ekledik.
+metinBelgesi="Python'u çok iyi biliyorum."
+list4=metinBelgesi.split(" ")           #boşlukları say.
+print(list4)
+
+metinBelgesi="Python'u-çok-iyi-biliyorum."
+list4=metinBelgesi.split("-")           #- leri say.
+print(list4)
+
+#list--->str
+list5=["Bu","bir","metindir."]
+metinBelgesi2=" ".join(list5)
+print(metinBelgesi2)
+
+list5=["Bu","bir","metindir."]
+metinBelgesi2="-".join(list5)
+print(metinBelgesi2)
+
+#yorumSatırı
+"""
+/
+
+/
+
+/
+
+"""
+
+metin1="merhabalar"
+
+metin2="iyi günler"
+
+birlesim="{} ve {}".format(metin1,metin2)
+
+print(birlesim)
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+birlesimF= f"{metin1} ve {metin2} "
+
+print(birlesimF)
