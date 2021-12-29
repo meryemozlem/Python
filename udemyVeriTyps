@@ -443,3 +443,92 @@ while i<6:
     i+=1
     if i==3:
         continue
+
+
+
+
+i=1
+while i<6:
+    print("i değeri:   ", i)
+    if i==3:
+        pass
+    i+=1
+
+i=1
+while i<6:
+    print("i değeri:   ", i)
+    i+=1
+else:
+    print("Koşul sağlanamadı.")
+
+#İç içe döngüler
+
+sifatlar=["büyük","tatlı","güzel"]
+meyveler=["elma","armut","muz"]
+
+for i in sifatlar:
+    for j in meyveler:
+        print(i,j)
+
+#list comprehension                 Lİste 1 in tüm elemanları Lİste 2 ye geçsin.
+#bu uznun yol.
+liste1=[3,5,7,9,1]
+liste2=[]       #boş liste list()
+liste3=list()
+
+for i in liste1:
+    liste2.append(i)
+print(liste2)
+
+#kısa yol
+liste2=[i for i in liste1]
+print(liste2)
+
+liste3=[i**3 for i in liste1]
+print(liste3)
+#ÖRNEK     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ içinde çift sayıları ve 9 u bulunduran liste.
+ornekListe=[1,2,3,4,5,6,7,8,9]
+newListe=[]
+for i in ornekListe:
+    if i%2==0 or i==9:
+        newListe.append(i)
+print(newListe)
+
+newListe=[i for i in ornekListe if(i%2==0 or i==9)]
+print(newListe)
+
+
+
+
+"""Bir futbol maçında a değişkeni ev sahibi takımın attığı gol sayısı, 
+b değişkeni misafir takımın attığı gol sayısı olsun. 
+a ve b değişkenlerine göre ev sahibi takımın kazanacağı puanı yazdıran bir koşul yazınız."""
+
+#Bir liste oluşturunuz ve List Comprehension yöntemi ile listenizdeki tek sayıların küpünü bulan ikinci bir liste oluşturunuz.
+a = 3
+b =2
+if a > b:
+    print("3 puan")
+elif a == b:
+    print("1 puan")
+else:
+    print("0 puan")
+
+
+
+a=10
+b=5
+
+if a<b:
+    print("Ev sahibi takım kaybetti.")
+elif a>b:
+    print("Ev sahibi takım kazandı.")
+elif a==b:
+    print("Maç berabere bitmiştir.")
+
+listem=[3,5,1,7,2,0]
+yeniListem=[i**3 for i in listem if (i%2==1)]               #i%2!=0
+print(yeniListem)
+
+#break döngü kesilir. continue o eleman için döngü kesilir. pass görmezden gelir. else...
+#if koşlul sağladıktan sonra yukaru çıkmaz ama wike çıkar bu sebpp döng ğü sonus zyapar.
