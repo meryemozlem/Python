@@ -532,3 +532,22 @@ print(yeniListem)
 
 #break döngü kesilir. continue o eleman için döngü kesilir. pass görmezden gelir. else...
 #if koşlul sağladıktan sonra yukaru çıkmaz ama wike çıkar bu sebpp döng ğü sonus zyapar.
+
+
+
+#Fonksiyonlar
+"""isimm=input("Lütfen isminizi girin: ")
+print(f"Hoş geldin {isimm}")"""
+
+"""def hosGeldin():
+    isimm=input("Lütfen isminizi giriniz    :")
+    print(f"Hoş geldin  {isimm}! Seni tekrar görmek çok güzel.")
+
+hosGeldin()"""
+
+"""def hosGeldin(isim):
+    print("Hoş geldin.",isim)
+hosGeldin("liya")
+hosGeldin("ziya")
+isimm=input("Lütfen isminizi giriniz    :")
+hosGeldin(isimm)"""
