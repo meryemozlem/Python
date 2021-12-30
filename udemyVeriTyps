@@ -551,3 +551,71 @@ hosGeldin("liya")
 hosGeldin("ziya")
 isimm=input("Lütfen isminizi giriniz    :")
 hosGeldin(isimm)"""
+
+
+
+"""def hosGeldin(ad,soyad):
+    print("Hoş geldin.",ad,soyad)
+ad=input("Adınız nedir?")
+soyad=input("Soyadınız nedir?")
+hosGeldin(ad,soyad)"""
+
+"""def hosGeldin(x,y):
+    print("Hoş geldin.",x,y)
+isim=input("Adınız nedir?")
+soyisim=input("Soyadınız nedir?")
+hosGeldin(isim,soyisim)"""
+
+"""def hosGeldin(x="Değer girilmedi.",y="Değer girilmedi."):
+    print("Hoş geldin.",x,y)
+isim=input("Adınız nedir?")
+soyisim=input("Soyadınız nedir?")
+hosGeldin(isim)"""
+
+#Fonk. ismi değiştirme
+
+#selam=hosGeldin
+#selam("elisa","soy")
+
+#Fonksşyonlarda parametre sadece 0ve2 olduğunda kusursuzdur. 1 ve 3 olduğunda bozulmya başlar. biz de böyle olmaması için *args kullanırız.
+#   *args       LİSTELER MANTIĞIYLA ÇALIŞIR. <--- for sebebi
+
+def calisanlar(*bilgiler):
+    print("Çalışan için girilen bilgiler    :")
+    for i in bilgiler:
+        print(i)
+calisanlar("Mert","Yılmaz","1990","Ankara")
+
+#   *kwargs     SÖZLÜKLER MANTIĞIYLA ÇALIŞIR.
+
+def calisan(**bilgileri):
+    print("adı: ",bilgileri["ad"])
+    print("soyadı:  ",bilgileri["soyad"])
+    print("doğum tarihi:    ",bilgileri["dogum"])
+    print("yaşadığı şehir:  ",bilgileri["sehir"])
+calisan(ad="Ali",soyad="yavrucuk",dogum=2007,sehir="Çorum")
+
+
+"""def topla(x,y):
+    print(x+y)
+topla("10","7")"""          #107 çıktı.str.
+#kahve mak.örneği
+
+#def topla(x,y):
+ #   toplam=x+y
+    #return toplam
+#sonuc=topla(100,79)
+#print(sonuc)
+
+"""def fonksiyon():
+    pass"""
+
+"""def topla(x,y):
+    return x+y
+        üstteki ile alttaki aynı. sadece alttaki daha kısa yolu.lmbd"""
+
+topla=lambda x,y : x+y
+print(topla(4,5))
+
+carp=lambda x,y,z: x*y*z
+print(carp(9,1,10))
