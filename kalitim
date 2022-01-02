@@ -1,0 +1,35 @@
+class kitap():
+    kutuphaneninAdi="Üniversite Kütüphanesi"        #clasa//sınıfa ait değişken.CLASS VARIABLES.
+    kitapSayisi=0
+    kitapId=1000
+    def __init__(self,ad="Girilmedi",yazar="Girilmedi",raf="Girilmedi",sayfa_sayisi="Girilmedi",yayinevi="Girilmedi"):      #attirbute instance variables.nesneye ait değişkenler.
+        self.ad=ad
+        self.yazar =yazar
+        self.raf=raf
+        self.sayfa_sayisi =sayfa_sayisi
+        self.yayinevi =yayinevi
+        kitap.kitapSayisi+=1
+        self.kitapId += 10
+        kitap.kitapId=self.kitapId
+
+    def bilgileriGoster(self):
+        return (" Kitap Adı:{}\n Yazarı:{}\n Raf:{}\n Sayfa Sayısı:{}\n Yayinevi:{}\n".format(self.ad,self.yazar,self.raf,self.sayfa_sayisi,self.yayinevi))
+
+    def sayfaArttir(self,deger):
+        self.sayfa_sayisi+=deger
+
+
+class yerelKitaplar(kitap):                 #normalde parantez boş olur ama biz yukardakileri tekrar yazmak istemedik. hepsi yerelKitaplar'a dahil olur.
+    pass
+class yabanciKitaplar(kitap):
+    pass
+
+
+kitap1 = kitap("Marple Seçkisi","Agatha Christie","C807",639,"Altın Kitaplar Yayınları")
+yerelKitap1 = yerelKitaplar("Saatleri Ayarlama Enstitüsü" , "Ahmet Hamdi Tanpınar")
+kitap3 = kitap("Diş Morfolojisi","Hüsnü Yavuzyılmaz","K10",900,"Gazi Kitapçılık")
+yabanciKitap1= yabanciKitaplar("Suç ve Ceza","Fyodor Dostoyevski","B22","879","Altın Kİtap yayınlar")
+kitap4 = kitap("Martı","Jonothon Livingsaon", yayinevi="Güvercinlik Yayınevi")
+
+print(yerelKitap1.bilgileriGoster())
+print(yabanciKitap1.bilgileriGoster())
