@@ -1,0 +1,279 @@
+#veri tipleri nasıl çalışıyor.veri tabanı oluşturmak. SINIF CLASS// NESNE OBJECT
+#ornek: kütüphanedeki kitaplar -ı dijitalortama aktar.
+
+"""print("kitap2")"""
+#print(kitap2)      hata verir.tanımlı değil.tanımlı olması için fonksiyon oluşturulabilir.ama biz burda sınıf oluşturacağız.
+#sınıf oluşturalım.
+"""class kitap():
+    pass"""
+
+"""kitap2=kitap()      #nesne oluşturduk. kitap2 nesnesi kitap sınıfının."""
+# print(kitap2)       #burda " " içine yazmadan ve hata almadan sonuç alabildik.
+
+#bir hatırlatma         degisken_adi=veriYapisiTuru
+#liste=list()
+#sayi=int()
+#küme=set()
+#demet=tuple()          sinifin_nesnesi=sinif
+#2 farklı nesne var.
+class kitap():
+    pass
+
+kitap1=kitap()
+print(kitap1)
+
+kitap1=kitap()          #nesneyi zenginleştir.
+kitap1.ad="Marple Seçkisi"
+kitap1.yazar="Agatha Christie"
+kitap1.raf="C807"
+kitap1.sayfa_sayisi=639
+kitap1.yayinevi="Altın Kitaplar Yayınları"
+
+print(kitap1.raf)
+print(kitap1.yazar)
+print(kitap1.sayfa_sayisi)
+
+print("~~~~~~~~~~")
+kitap2=kitap()
+
+kitap2.ad="Kardeşimin Hikayesi"
+kitap2.yazar="Zülfü Livaneli"
+kitap2.raf="B101"
+kitap2.sayfa_sayisi=398
+kitap2.yayinevi="Doğan Kitabevi"
+
+print(kitap2.ad)
+print(kitap2.yazar)
+print(kitap2.sayfa_sayisi)
+
+#init ve self içini doldur. self oluşturulan nesnenin ismi.
+#initilaze giriş.sınıflarda ilk bu fonk. çalışır ve içi görünür çıktı da. self nesne adı self=kitap2
+#Bazen veriler eksik girlebilri. Sen bir düzen kurmalısın. def__init__ ile sağla. def __init__ bazı parametre alsın.
+
+class kitap():
+    def __init__(self,ad="Girilmedi",yazar="Girilmedi",raf="Girilmedi",sayfa_sayisi="Girilmedi",yayinevi="Girilmedi"):  #stndrt oluştur.
+        #obje.ad=yukardaki ad (self,ad...) hepsi birer attirbute özellik.
+        self.ad=ad
+        self.yazar=yazar
+        self.raf=raf
+        self.sayfa_sayisi=sayfa_sayisi
+        self.yayinevi=yayinevi
+
+kitap3 = kitap("Diş Morfolojisi","Hüsnü Yavuzyılmaz","K10",900,"Gazi Kitapçılık")
+kitap4 = kitap("Martı","Jonothon Livingsaon", yayinevi="Güvercinlik Yayınevi")#eksik bilgi girildiğinde nesne oluşamaz.
+
+print(kitap1.ad)
+print(kitap1.sayfa_sayisi)
+print(kitap1.yayinevi)
+print(kitap1.yayinevi)
+
+print(kitap2.ad)
+print(kitap2.sayfa_sayisi)
+print(kitap2.yayinevi)
+print(kitap2.yayinevi)
+
+print(kitap3.ad)
+print(kitap3.sayfa_sayisi)
+print(kitap3.yayinevi)
+print(kitap3.yayinevi)
+
+print(kitap4.ad)
+print(kitap4.sayfa_sayisi)
+print(kitap4.yayinevi)
+print(kitap4.yayinevi)
+
+#METOTLAR Fonksiyonlar class içinde yazılan. 1 fonk. olsun içindeki bilgileri göstersin.
+class kitap():
+    
+    def __init__(self,ad="Girilmedi",yazar="Girilmedi",raf="Girilmedi",sayfa_sayisi="Girilmedi",yayinevi="Girilmedi"):
+        self.ad=ad
+        self.yazar =yazar
+        self.raf=raf
+        self.sayfa_sayisi =sayfa_sayisi
+        self.yayinevi =yayinevi
+        
+    def bilgileriGoster(self):
+        return print(" Kitap Adı:{}\n Yazarı:{}\n Raf:{}\n Sayfa Sayısı:{}\n Yayinevi:{}\n".format(self.ad,self.yazar,self.raf,self.sayfa_sayisi,self.yayinevi))
+
+    def sayfaArttir(self,deger):
+        self.sayfa_sayisi+=deger
+
+kitap3 = kitap("Diş Morfolojisi","Hüsnü Yavuzyılmaz","K10",900,"Gazi Kitapçılık")
+kitap3.bilgileriGoster()
+kitap3.sayfaArttir(10)
+kitap3.bilgileriGoster()
+
+
+kitap1 = kitap("Marple Seçkisi","Agatha Christie","C807",639,"Altın Kitaplar Yayınları")
+kitap1.bilgileriGoster()
+kitap4 = kitap("Martı","Jonothon Livingsaon", yayinevi="Güvercinlik Yayınevi")
+kitap4.bilgileriGoster()
+
+#print(kitap3.sayfaArttir())
+#print(kitap3.bilgileriGoster())
+
+class kitap():
+    kutuphaneninAdi="Üniversite Kütüphanesi"        #clasa//sınıfa ait değişken.CLASS VARIABLES.
+    def __init__(self,ad="Girilmedi",yazar="Girilmedi",raf="Girilmedi",sayfa_sayisi="Girilmedi",yayinevi="Girilmedi"):      #attirbute instance variables.nesneye ait değişkenler.
+        self.ad=ad
+        self.yazar =yazar
+        self.raf=raf
+        self.sayfa_sayisi =sayfa_sayisi
+        self.yayinevi =yayinevi
+        
+    def bilgileriGoster(self):
+        return print(" Kitap Adı:{}\n Yazarı:{}\n Raf:{}\n Sayfa Sayısı:{}\n Yayinevi:{}\n".format(self.ad,self.yazar,self.raf,self.sayfa_sayisi,self.yayinevi))
+
+    def sayfaArttir(self,deger):
+        self.sayfa_sayisi+=deger
+kitap1 = kitap("Marple Seçkisi","Agatha Christie","C807",639,"Altın Kitaplar Yayınları")
+kitap4 = kitap("Martı","Jonothon Livingsaon", yayinevi="Güvercinlik Yayınevi")
+
+print(kitap.kutuphaneninAdi)
+print(kitap1.kutuphaneninAdi)       #nesneler üzüerinden de ulaşılır.sınıfa ait olan değişkene heryerden ulaşılır.
+#print(kitap.ad)                     #hata verir. nesneye ait olan değişkene her yerde ulşılmaz.
+print(kitap1.ad)
+
+kitap.kutuphaneninAdi="İTÜ KÜTÜPHANESİ"     #nesne2 ve class itü
+print(kitap.kutuphaneninAdi)
+print(kitap1.kutuphaneninAdi)
+
+kitap1.kutuphaneninAdi="İstanbul Üniversitesi Kütüphanesi"      #nesne1 istanbul ismi değişti....
+print(kitap1.kutuphaneninAdi)
+print(kitap.kutuphaneninAdi)
+print(kitap1.kutuphaneninAdi)
+
+#sayaç sınıfa her nesne eklendiği zaman kitap sayısı artsın. nesne sayımı.
+class kitap():
+    kutuphaneninAdi="Üniversite Kütüphanesi"        #clasa//sınıfa ait değişken.CLASS VARIABLES.
+    kitapSayisi=0
+    kitapId=1000
+    def __init__(self,ad="Girilmedi",yazar="Girilmedi",raf="Girilmedi",sayfa_sayisi="Girilmedi",yayinevi="Girilmedi"):      #attirbute instance variables.nesneye ait değişkenler. her nesne çalıştığında , ilk bu __init__ fonk.  çalışır.
+        self.ad=ad
+        self.yazar =yazar
+        self.raf=raf
+        self.sayfa_sayisi =sayfa_sayisi
+        self.yayinevi =yayinevi
+        kitap.kitapSayisi+=1
+        self.kitapId += 10
+        kitap.kitapId=self.kitapId
+
+    def bilgileriGoster(self):
+        return print(" Kitap Adı:{}\n Yazarı:{}\n Raf:{}\n Sayfa Sayısı:{}\n Yayinevi:{}\n".format(self.ad,self.yazar,self.raf,self.sayfa_sayisi,self.yayinevi))
+
+    def sayfaArttir(self,deger):
+        self.sayfa_sayisi+=deger
+#nesneler
+kitap1 = kitap("Marple Seçkisi","Agatha Christie","C807",639,"Altın Kitaplar Yayınları")
+kitap4 = kitap("Martı","Jonothon Livingsaon", yayinevi="Güvercinlik Yayınevi")
+kitap3 = kitap("Diş Morfolojisi","Hüsnü Yavuzyılmaz","K10",900,"Gazi Kitapçılık")
+
+print(kitap.kitapSayisi)
+print(kitap1.kitapSayisi)
+print(kitap3.kitapSayisi)
+
+print(kitap1.kitapId)
+print(kitap3.kitapId)
+print(kitap4.kitapId)
+#herbirinii kitap sayısı bir. eşitti ama Id ler farklı bu nasıl oldu? sadece konum ve satır. fonk. içi ve dışı olayı.
+
+class kitap():
+    kutuphaneninAdi="Üniversite Kütüphanesi"        #clasa//sınıfa ait değişken.CLASS VARIABLES.
+    kitapSayisi=0
+    kitapId=1000
+    def __init__(self,ad="Girilmedi",yazar="Girilmedi",raf="Girilmedi",sayfa_sayisi="Girilmedi",yayinevi="Girilmedi"):      #attirbute instance variables.nesneye ait değişkenler. her nesne çalıştığında , ilk bu __init__ fonk.  çalışır.
+        self.ad=ad
+        self.yazar =yazar
+        self.raf=raf
+        self.sayfa_sayisi =sayfa_sayisi
+        self.yayinevi =yayinevi
+        kitap.kitapSayisi+=1
+        self.kitapId+= 10
+        kitap.kitapId=self.kitapId
+    #ınstance self nesneye ait metot. kitap1.bilgileri goster der ama kitap.bilgileri goster diyemez. bilgileri goster  nesnelerle beraber çağırılır.
+    def bilgileriGoster(self):
+        return print(" Kitap Adı:{}\n Yazarı:{}\n Raf:{}\n Sayfa Sayısı:{}\n Yayinevi:{}\n".format(self.ad,self.yazar,self.raf,self.sayfa_sayisi,self.yayinevi))
+    #ınstance--->self nesneye ait metot. Nesnelerle beraber çağırılır. 
+    def sayfaArttir(self,deger):
+        self.sayfa_sayisi+=deger
+
+#kitap.bilgileriGoster(kitap1) denir. içine nesne yazdık çünkü. Peki içi boş olsa nası lçağırırız. Cevap çok basit. class method kullanırız.
+#class method
+    @classmethod
+    def kitapSayisiniSoyle(cls):
+        return kitap.kitapSayisi
+
+kitap1 = kitap("Marple Seçkisi","Agatha Christie","C807",639,"Altın Kitaplar Yayınları")
+kitap4 = kitap("Martı","Jonothon Livingsaon", yayinevi="Güvercinlik Yayınevi")
+kitap3 = kitap("Diş Morfolojisi","Hüsnü Yavuzyılmaz","K10",900,"Gazi Kitapçılık")
+
+
+print(kitap.kitapSayisiniSoyle())
+print(kitap1.kitapSayisiniSoyle())
+print(kitap4.kitapSayisiniSoyle())
+
+# def string ile oluştur class methodunu.
+class kitap():
+    def __init__(self,ad="Girilmedi",yazar="Girilmedi",raf="Girilmedi",sayfa_sayisi="Girilmedi",yayinevi="Girilmedi"):  #stndrt oluştur.
+        #obje.ad=yukardaki ad (self,ad...) hepsi birer attirbute özellik.
+        self.ad=ad
+        self.yazar=yazar
+        self.raf=raf
+        self.sayfa_sayisi=sayfa_sayisi
+        self.yayinevi=yayinevi
+    def bilgileriGoster(self):
+        return (" Kitap Adı:{}\n Yazarı:{}\n Raf:{}\n Sayfa Sayısı:{}\n Yayinevi:{}\n".format(self.ad,self.yazar,self.raf,self.sayfa_sayisi,self.yayinevi))
+
+    @classmethod
+    def stringIleOlustur(cls, metin):
+        ad, yazar=metin.split(" ")      #ad,yazar kitap adı ve yazar yani.
+        return cls(ad,yazar)
+
+kitap1 = kitap("Marple Seçkisi","Agatha Christie","C807",639,"Altın Kitaplar Yayınları")
+kitap2 = kitap.stringIleOlustur("SaatleriAyarlamaEnstitüsü AhmetHamdiTanpınar")
+kitap3 = kitap("Diş Morfolojisi","Hüsnü Yavuzyılmaz","K10",900,"Gazi Kitapçılık")
+kitap4 = kitap("Martı","Jonothon Livingsaon", yayinevi="Güvercinlik Yayınevi")
+
+
+print(kitap2.bilgileriGoster())
+
+#STATIC Method  kütüphane adını söylesin.
+class kitap():
+    kutuphaneninAdi="Üniversite Kütüphanesi"        #clasa//sınıfa ait değişken.CLASS VARIABLES.
+    def __init__(self,ad="Girilmedi",yazar="Girilmedi",raf="Girilmedi",sayfa_sayisi="Girilmedi",yayinevi="Girilmedi"):      #attirbute instance variables.nesneye ait değişkenler.
+        self.ad=ad
+        self.yazar =yazar
+        self.raf=raf
+        self.sayfa_sayisi =sayfa_sayisi
+        self.yayinevi =yayinevi
+    def bilgileriGoster(self):
+        return (" Kitap Adı:{}\n Yazarı:{}\n Raf:{}\n Sayfa Sayısı:{}\n Yayinevi:{}\n".format(self.ad,self.yazar,self.raf,self.sayfa_sayisi,self.yayinevi))
+
+    @staticmethod
+    def kutuphaneAdiniSoyle ():
+        return kitap.kutuphaneninAdi
+
+
+print(kitap.kutuphaneAdiniSoyle())
+
+#class ve static method farkı şudur. class içine bir şey alır cls. ststic ise almaz. içine self alırsa  instance methoddur. nesne ile oluşur.sınıf ismi yazılarak oluşamaz. class method da class ismi yazılarak ulaşılabilir.Staticde de ulaşılabilir.
+
+
+
+
+
+#class kitap():
+    #def __init__(self,ad,yazar,raf,sayfa_sayisi,yayinevi):
+        #obje.ad=yukardaki ad (self,ad...) hepsi birer attirbute özellik. nesneye ait değişken.
+        #self.ad=ad
+        #self.yazar=yazar
+        #self.raf=raf
+        #self.sayfa_sayisi=sayfa_sayisi
+        #self.yayinevi=yayinevi
+        
+#kitap2 = kitap("Kardeşimin Hikayesi","Zülfü Livaneli","B101",398,"Doğan Kitabevi")
+
+#print(kitap1.sayfa_sayisi)
+#print(kitap1.yayinevi)
+#print(kitap1.yayinevi)
+#print(kitap1.ad)
