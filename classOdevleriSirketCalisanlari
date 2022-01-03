@@ -1,0 +1,106 @@
+#Bir şirkette çalışanlar için hazırlanmış class'ı oluşturunuz.
+
+class calisanlar():
+
+    sirketAdi = "Aydoğan Yazılım"
+    calısanSayisi = 0
+    calısanID = 1000
+
+    def __init__(self,ad = "Girilmedi",departman = "Girilmedi",tecrübe = "Girilmedi",yas = "Girilmedi",yönetici = "Girilmedi"):   
+
+        self.ad = ad
+        self.departman = departman
+        self.tecrübe = tecrübe
+        self.yas = yas
+        self.yönetici = yönetici
+
+        calisanlar.calısanSayisi += 1
+        self.calısanID += 5
+        calisanlar.calısanID = self.calısanID
+
+
+    #instance method
+    def __str__(self):          #dunder calısan1 diyince gözükr.
+        return " Adı: {} \n Deparman: {} \n Tecrübe: {} \n Yaş: {} \n Yönetici: {} \n".format(self.ad,self.departman,self.tecrübe,self.yas,self.yönetici)
+    #instance method
+    def yasArttır(self,yeniYas):
+        self.yas += yeniYas
+
+    @classmethod
+    def calisanSayisiniSoyle(cls):
+        return cls.calisanSayisi
+
+    #static method
+    @staticmethod
+    def sirketAdiniSoyle():
+        return calisan.sirketAdi
+    def __len__(self):
+        return self.yas
+    def __add__(self,other):
+        return self.ad + other.ad
+
+calisan1 = calisanlar("Meryem Özlem Aydoğan","Yönetim",2,24,"Meryem Özlem Aydoğan")
+calisan2 = calisanlar("Özge İşler","Arge",2,28,"Berat Durmuş")
+calisan3 = calisanlar("Nursena Soydan","Operasyon",1,22,"Cengizhan Kınık")
+calisan4 = calisanlar("Sena Tekmen","İnsan Kaynakları",4,yönetici = "Osman Baytr")
+
+print(calisan3.ad)
+print(calisan4)
+print(calisan2)
+#print(calisanSayisi)
+
+
+
+class personel():
+  sirketadı = "Harika Şirket"
+  personelsayisi=0
+  personelID = 1000
+  def __init__(self,ad = "bilinmiyor",soyad = "bilinmiyor",pozisyon ="bilinmiyor",maaş= "bilinmiyor"):
+    self.ad=ad
+    self.soyad=soyad
+    self.pozisyon=pozisyon
+    self.maaş=maaş
+    self.personelID+=1
+    personel.personelID=self.personelID
+    personel.personelsayisi+=1
+
+  def bilgiler(self):
+    return print("personel adı: {} \npersonel soyadı: {} \npozisyonu: {} \nmaaşı: {} \n".format(self.ad,self.soyad,self.pozisyon,self.maaş))
+
+  def maasArttır(self,deger):
+      self.maaş += deger # self.sayfa = self.sayfa + deger
+      return print("personel adı: {} \npersonel soyadı: {} \npozisyonu: {} \nmaaşı: {} \n".format(self.ad,self.soyad,self.pozisyon,self.maaş))
+  
+  @classmethod
+  def PersonelSayısınıSoyle(cls):
+      return print( "Personel sayısı: {} \n".format(personel.personelsayisi))
+
+  @staticmethod
+  def sirketAdiniSoyle():
+      return print( "Şirket Adı: {} \n".format( personel.sirketadı ))   
+
+personel1=personel("hilal", "yılmaz","mühendis", 3000)
+personel1.bilgiler()
+
+personel2=personel("Paulo", "Coelho","editör")
+personel2.bilgiler()
+
+personel1.maasArttır(500)
+personel.PersonelSayısınıSoyle()
+
+
+class planlamadepartmanı(personel):
+  def __init__(self,ad = "bilinmiyor",soyad = "bilinmiyor",pozisyon ="bilinmiyor",maaş= "bilinmiyor"): 
+      super().__init__(ad,soyad,pozisyon,maaş)
+
+  def bilgileriGoster(self):
+    return print("personel adı: {} \npersonel soyadı: {} \npozisyonu: {} \nmaaşı: {} \n".format(self.ad,self.soyad,self.pozisyon,self.maaş))
+
+  def pozisyonDegistir(self,yenipozisyon):
+    self.pozisyon = yenipozisyon
+        
+planlamapersonel1 = planlamadepartmanı("Özdemir","Kısa","müdür", 6000)
+planlamapersonel1.bilgileriGoster()
+print("------")
+planlamapersonel1.pozisyonDegistir("hizmetli")
+planlamapersonel1.bilgileriGoster()
