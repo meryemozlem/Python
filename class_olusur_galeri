@@ -1,0 +1,117 @@
+import time
+class araba():
+    galeriAdi="Aydoğan Galeri Center"                   #claass variable.
+    aracSayisi=0
+    aracID= 2005                                       #plaka gibisinden.
+    
+    def __init__(self,marka="Girilmedi",model="Girilmedi",yil="Girilmedi",km="Girilmedi",renk="Girilmedi"):         #instance variables.stndrt girikmed
+        self.marka=marka
+        self.model=model
+        self.yil=yil
+        self.km=km
+        self.renk=renk
+        araba.aracSayisi+=1                                     #her init fonk. çalıştığında sayiyi 1 arttır.
+        araba.aracID+=5
+        self.aracID=araba.aracID
+        self.index = -1
+
+    def zamanHesapla(fonk):                                         #decorator olıştu.
+        def wrapper(*args,**kwargs):
+            baslangic = time.time()
+            fonk(*args,**kwargs)
+            bitis = time.time()
+            print(f"işlem {bitis/baslangic} saniye sürmüştü.")
+            #print("Bu işlem toplam {} saniye sürdü.".format(bitis-baslangic))
+        return wrapper
+
+    @zamanHesapla
+    def renkDegistir(self,yeniRenk):
+        self.renk = yeniRenk
+
+    def __str__(self):                                      #dunder metot. bilg. goster.
+        return f"Arabanın markası :{self.marka} \n Arabanın moddeli :{self.model} \n Arabanın üretim yili :{self.yil} \n Arabanın kmsi :{self.km} \n Arabanın rengi :{self.renk} \n  "
+
+    def __len__(self):
+        return self.yil
+
+    @zamanHesapla
+    def __add__(self,other):
+        return self.yil + other.yil
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):                 #index -1 
+        self.index+=1
+        if self.index<len(self.marka):
+            return self.marka[self.index]                #return self.marka , (self.index)
+        else:
+            self.index=-1
+            raise StopIteration
+
+    @classmethod                    #sınıfa ait decorator
+    def aracSayisiniSoyle(cls):
+
+        return cls.aracSayisi
+    @staticmethod
+    def galeriAdiniSoyle():
+        return araba.galeriAdi
+
+    def ornekGenerator(self):
+        for i in range (1,self.yil):
+            yield i*2
+
+
+
+
+
+arac1 = araba("Renault","Megane",1997,30000,"Kırmızı")
+arac2=araba("Volkswagen","Jetta",2018,7950,"Antrasit" )
+arac3=araba("Fiat","Linea",2017,30000,"Beyaz")
+#print(arac1)                               <...main...> der ama özellikleri tet tek yazmaz. bizde str metodunu kullanırız. 
+#print(arac1.renk)                          sadece kırmızı yazar.
+print(arac1)
+print(len(arac1))
+
+print(araba.galeriAdi)
+print(araba.aracSayisi)
+print(arac1.aracID)
+arac1.renkDegistir("Sarı")
+print(arac1)
+print(arac2+arac3)
+
+iterator=iter(arac2)
+for i in arac3:
+    print(i)
+
+#renault markasını iterable olmasını istiyorum her çağırdığımda fonk. renault diye geliversin.
+print("`~~~~~~~~~~~~~~~~~~~~~")
+while True:
+    try:
+        i=next(iterator)
+        print(i)
+    except StopIteration:
+        break
+
+print(araba.aracSayisiniSoyle())
+
+print(araba.galeriAdiniSoyle())
+
+#1 2 3... * 2 = 2 4 6... 2017 yılına kadar devam eder.
+
+generator = arac1.ornekGenerator()
+iterator = iter(generator)
+print(next(iterator))
+print(next(iterator))
+print(next(iterator))
+
+arac1.renkDegistir("Sarı")
+print(arac1)
+
+arac2+arac3
+print("8888888888")
+arac1+arac2
+#print(arac1+arac3)         none çıktırır.
+
+arac1.renkDegistir("moR")
+print(arac2)
