@@ -1,0 +1,82 @@
+#1.Bir liste oluşturunuz ve bu listeyi iterator kullanarak while döngüsünde yazdırınız.
+
+#2.Basit bir class oluşturularak bu class'ı iterable yapınız.
+
+#3.yield kullandığınız bir fonksiyon yazınız ve oluşturdunuz genarator'u ekrana iki örneğini yazdırınız.
+
+#4.Fonksiyonların çalışma süresini hesaplayan bir decorator yazınız.
+
+#CevapLAR
+ #1.
+listem = [9,8,15,3,4]
+iterator3=iter(listem)
+while True:
+    try:
+        i=next(iterator3)
+        print(i)
+    except StopIteration:
+        break
+
+  #2.
+class sinifdakiOgrenciler():
+    def __init__(self,ogrenciAdi,ogrenciSoyadi,ogrencilerinSubesi):
+        self.ogrenciAdi=ogrenciAdi
+        self.ogrenciSoyadi=ogrenciSoyadi
+        self.ogrencilerinSubesi=ogrencilerinSubesi
+        self.index = -1
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        self.index +=1
+        if (self.index< len(self.ogrenciAdi)):
+            return self.ogrenciAdi[self.index]
+        else:
+            self.index= -1
+            raise StopIteration
+
+ogrenciler=sinifdakiOgrenciler(["Ali","İlayda","Ekin","Burcu","Seyit"],["Yılmaz","Özdemir","Ceyhan","Tekkaya","İşler"],"9/H")
+for i in ogrenciler:
+    print(i)
+
+"soyadları ve sınıf şubelerini nasılgstereceğiz ? ."
+
+ #3.
+
+def kareAl ():
+     for i in range (1,10):
+         yield i ** 2
+         generator = kareAl()
+         iterator=iter(generator)
+         print(next(iterator))
+         print(next(iterator))
+kareAl()
+
+#4.
+import time
+def zamanHesapla(fonk):
+    def wrapper (*args,**kwargs):
+        baslangic=time.time()
+        fonk(*args,**kwargs)
+        bitis=time.time()
+        print(f"islem {bitis-baslangic} snaiye sürdü.")
+    return wrapper
+
+@zamanHesapla
+def kareleriAl(liste):
+    for i in liste:
+        print(i**2)
+
+@zamanHesapla
+def kupleriAl(liste):
+    for i in liste:
+        print(i**3)
+
+@zamanHesapla
+def topla(a,b):
+        print(a+b)
+
+kareleriAl(range(0,10))
+kupleriAl(range(0,10))
+topla(3,2)
