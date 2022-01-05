@@ -1,0 +1,19 @@
+import sqlite3
+baglanti=sqlite3.connect("/kullanıcılar/mozay/desktop/telefon.db")
+cursor=baglanti.cursor()
+baglanti.close()
+
+def tabloOlustur():
+    cursor.execute("CREATE TABLE IF NOT EXISTS telefonListesi(AdSoyad TEXT,Meslek TEXT,Telefon TEXT)")
+    baglanti.commit()
+tabloOlustur()
+baglanti.close()
+
+def veriEkle(adSoyad,meslek,telefon):
+    cursor.execute("INSERT INTO telefonListesi VALUES (?,?,?)",(adSoyad,meslek,telefon))
+    baglanti.commit()
+
+veriEkle("Ceyhun Özdemir","Mühendis",5398911245)
+veriEkle("Aslı Hasanoğlan","Doktor",5557614590)
+veriEkle("Şükriye Şimşek","Mimar",5329134356)
+veriEkle()
