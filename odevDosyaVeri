@@ -1,0 +1,78 @@
+#1. Bir resmi rb ve wb modlarını kullanarak kopyalayınız.
+with open("/Users/huawei/OneDrive/Desktop/rose.png","rb") as resimOku:
+
+    with open("/Users/huawei/OneDrive/Desktop/roseYENI.png","wb") as resimYaz:
+
+        oku = resimOku.read()
+
+        resimYaz.write(oku)
+#2. ornek.txt dosyasının ortasındaki bir satıra kendi satırınızı yazdırınız.
+with open("/Users/huawei/OneDrive/Desktop/ornek.txt","r+") as dosya:
+    liste = dosya.readlines()
+    liste.insert(2,"Python Kursu\n")
+    dosya.seek(0)
+    for satır in liste:
+        dosya.write(satır)
+    icerik = dosya.read()
+    print(icerik)
+
+#3. Bir veritabanı oluşturup kurslarda yazan tüm SQL komutlarını deneyiniz.
+import sqlite3
+baglanti = sqlite3.connect("/Users/huawei/OneDrive/Desktop/telefonum.db")
+cursor = baglanti.cursor()
+def tablOlustur():
+    cursor.execute("CREATE TABLE IF NOT EXISTS telefonListesi(AdSoyad TEXT, Meslek TEXT, Telefon INT)")
+    baglanti.commit()
+tablOlustur()
+baglanti.close()
+
+import sqlite3
+baglanti = sqlite3.connect("/Users/huawei/OneDrive/Desktop/telefonum.db")
+cursor = baglanti.cursor()
+def veriEkle(adsoyad,meslek,telefon):
+    cursor.execute("INSERT INTO telefonListesi VALUES(?,?,?)",(adsoyad,meslek,telefon))
+    baglanti.commit()
+veriEkle("Hakan Yılmaz","Turizm",5052345678)
+veriEkle("Derya Yılmaz","Ev Hanımı",5053456789)
+veriEkle("Melike Yılmaz","Biyolog",5051234567)
+baglanti.close()
+
+import sqlite3
+baglanti = sqlite3.connect("/Users/huawei/OneDrive/Desktop/telefonum.db")
+cursor = baglanti.cursor()
+def veriSec():
+    cursor.execute("SELECT * FROM telefonListesi") # telefonListesinden tüm(*) verilerden seç demek
+    veri = cursor.fetchall()
+    print("Telefon Arşivi")
+    for i in veri:
+        print(i)
+def veriSec2():
+    cursor.execute("SELECT adsoyad, Telefon FROM telefonListesi")       
+    veri = cursor.fetchall()
+    print("Telefon Arşivi")
+    for i in veri:
+        print(i)   
+veriSec()
+veriSec2()
+baglanti.close()
+
+import sqlite3
+baglanti = sqlite3.connect("/Users/huawei/OneDrive/Desktop/telefonum.db")
+cursor = baglanti.cursor()
+def telefonGuncelle(eskiTelefon,yeniTelefon):
+    cursor.execute("UPDATE telefonListesi SET Telefon = ? WHERE Telefon = ?", (yeniTelefon,eskiTelefon))
+    baglanti.commit()
+
+telefonGuncelle(5052345678,5050000000)
+baglanti.close()
+
+import sqlite3
+baglanti = sqlite3.connect("/Users/huawei/OneDrive/Desktop/telefonum.db")
+cursor = baglanti.cursor()
+
+def veriSil(silineceKisi):
+    cursor.execute("DELETE FROM telefonListesi WHERE AdSoyad = ?",(silineceKisi,))
+    baglanti.commit()
+
+veriSil("Derya Yılmaz")
+baglanti.close()
